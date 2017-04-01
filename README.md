@@ -1,5 +1,7 @@
 # Lecture for manual testers
 
+Prerequisites:
+Java 8 (jdk1.8) and Maven have to be installed on your system.
 
 
 To download drivers, run
