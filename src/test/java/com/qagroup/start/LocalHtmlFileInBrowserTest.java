@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-public class LocalHtmlFileInBrowser {
+public class LocalHtmlFileInBrowserTest {
 	/**
 	 * Chrome driver property variable
 	 */
