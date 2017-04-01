@@ -1,0 +1,17 @@
+target
+test-output
+.classpath
+.project
+.settings
+.DS_Store
+**/.DS_Store
+
+/src/test/java/debug/
+
+/target/
+
+selenium_standalone_binaries/**
+selenium_standalone_zips/**
+
+/selenium_standalone_binaries/**
+/selenium_standalone_zips/**
