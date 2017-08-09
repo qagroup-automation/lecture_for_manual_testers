@@ -18,37 +18,52 @@ public class LocalHtmlFileInBrowserTest {
 	 * Hard-coded path to chromedriver.exe on my computer :-)
 	 */
 	private static final String PATH_TO_CHROME_DRIVER = "E:\\workspace\\eclipse_neon\\aqa_simple\\selenium_standalone_binaries\\windows\\googlechrome\\64bit\\chromedriver.exe";
+	//private static final String PATH_TO_CHROME_DRIVER = "E:\\workspace\\eclipse_neon\\aqa_simple\\selenium_standalone_binaries\\windows\\googlechrome\\64bit\\chromedriver.exe";
 
 	/**
 	 * Hard-coded path to {@code example.html} file on my computer :-)
 	 */
-	private static final String PATH_TO_EXAMPLE_HTML = "E:\\qagroup\\spring_2017\\html\\example.html";
+	private static final String PATH_TO_EXAMPLE_HTML = "E:\\qagroup\\summer_2017_for_manual\\html\\example.html";
 
 	WebDriver driver;
+	Alert alert;
 	
+	//@Test
+	public void testGoogle() {
+		System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
+		driver = new ChromeDriver();
+		waitFor(2);
+		driver.navigate().to("http://www.google.com.ua");
+		driver.findElement(By.name("q")).sendKeys("Hello automated world!");
+		
+		waitFor(2);
+	}
 	
 	@Test
 	public void testStartBrowser() {
 		System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
 		driver = new ChromeDriver();
-		driver.navigate().to(PATH_TO_EXAMPLE_HTML);
-		
-		driver.findElement(By.xpath("//button")).click();
-		
 		waitFor(2);
 		
-		Alert alert = driver.switchTo().alert();
+		driver.navigate().to(PATH_TO_EXAMPLE_HTML);
+		
+		//waitFor(2);
+		
+		driver.findElement(By.xpath("//button")).click();
+//		waitFor(2);
+		
+		alert = driver.switchTo().alert();
 		
 		Assert.assertEquals(alert.getText(), "Hello world!", "Text on alert is not correct:");
 		
-		alert.accept();
-		
-		waitFor(2);
 		
 	}
 	
 	@AfterClass(alwaysRun = true)
 	public void cleanUp() {
+		alert.accept();
+		waitFor(2);
+		
 		driver.close();
 	}
 	
