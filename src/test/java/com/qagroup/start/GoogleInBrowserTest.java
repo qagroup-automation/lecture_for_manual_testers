@@ -1,14 +1,13 @@
 package com.qagroup.start;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-public class LocalHtmlFileInBrowserTest {
+public class GoogleInBrowserTest {
+
 	/**
 	 * Chrome driver property variable
 	 */
@@ -19,37 +18,21 @@ public class LocalHtmlFileInBrowserTest {
 	 */
 	private static final String PATH_TO_CHROME_DRIVER = getPathToDriver();
 
-	/**
-	 * Hard-coded path to {@code example.html} :-)
-	 */
-	private static final String PATH_TO_EXAMPLE_HTML = getPathToExmapleHtml();
+	private WebDriver driver;
 
-	WebDriver driver;
-	Alert alert;
-	
 	@Test
-	public void testStartBrowser() {
+	public void testGoogle() {
 		System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
 		driver = new ChromeDriver();
 		waitFor(2);
-
-		driver.navigate().to(PATH_TO_EXAMPLE_HTML);
+		driver.navigate().to("http://www.google.com.ua");
+		driver.findElement(By.name("q")).sendKeys("Hello automated world!");
 
 		waitFor(2);
-
-		driver.findElement(By.cssSelector("button")).click();
-		waitFor(2);
-
-		alert = driver.switchTo().alert();
-
-		Assert.assertEquals(alert.getText(), "Hello world!", "Text on alert is not correct:");
 	}
-
+	
 	@AfterClass(alwaysRun = true)
 	public void cleanUp() {
-		alert.accept();
-		waitFor(2);
-
 		driver.close();
 	}
 
@@ -64,10 +47,6 @@ public class LocalHtmlFileInBrowserTest {
 		} catch (Exception e) {
 			// Nothing to do here
 		}
-	}
-
-	private static String getPathToExmapleHtml() {
-		return System.getProperty("user.dir") + "\\html\\example.html";
 	}
 
 	private static String getPathToDriver() {
