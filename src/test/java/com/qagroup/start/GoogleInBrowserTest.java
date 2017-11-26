@@ -26,7 +26,7 @@ public class GoogleInBrowserTest {
 		driver = new ChromeDriver();
 		waitFor(2);
 		driver.navigate().to("http://www.google.com.ua");
-		driver.findElement(By.name("q")).sendKeys("Hello automated world!");
+		driver.findElement(By.name("q")).sendKeys("QA Group!");
 
 		waitFor(2);
 	}

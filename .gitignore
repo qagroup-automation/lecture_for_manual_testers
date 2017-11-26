@@ -7,7 +7,7 @@ test-output
 **/.DS_Store
 
 /src/test/java/debug/
-
+/bin/
 /target/
 
 selenium_standalone_binaries/**

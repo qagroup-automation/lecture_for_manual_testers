@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -29,26 +30,26 @@ public class LocalHtmlFileInBrowserTest {
 	
 	@Test
 	public void testStartBrowser() {
-		System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
+		//System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
 		driver = new ChromeDriver();
-		waitFor(2);
+		//waitFor(2);
 
 		driver.navigate().to(PATH_TO_EXAMPLE_HTML);
 
-		waitFor(2);
+		//waitFor(2);
 
 		driver.findElement(By.cssSelector("button")).click();
-		waitFor(2);
+		//waitFor(2);
 
 		alert = driver.switchTo().alert();
-
-		Assert.assertEquals(alert.getText(), "Hello world!", "Text on alert is not correct:");
+		
+		Assert.assertEquals(alert.getText(), "Hello world.", "Text on alert is not correct:");
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void cleanUp() {
 		alert.accept();
-		waitFor(2);
+		//waitFor(2);
 
 		driver.close();
 	}
@@ -73,5 +74,10 @@ public class LocalHtmlFileInBrowserTest {
 	private static String getPathToDriver() {
 		return System.getProperty("user.dir")
 				+ "\\selenium_standalone_binaries\\windows\\googlechrome\\64bit\\chromedriver.exe";
+	}
+	
+	public static void main(String[] args) {
+		System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
+		new ChromeDriver();
 	}
 }
