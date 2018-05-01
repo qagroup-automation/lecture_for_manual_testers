@@ -26,8 +26,10 @@ public class GoogleInBrowserTest {
 		driver = new ChromeDriver();
 		waitFor(2);
 		driver.navigate().to("http://www.google.com.ua");
-		driver.findElement(By.name("q")).sendKeys("QA Group!");
-
+		
+		driver.findElement(By.cssSelector("#lst-ib")).sendKeys("QA Group!");
+		//By.xpath("//*[@id='lst-ib']")
+		
 		waitFor(2);
 	}
 	
