@@ -32,7 +32,7 @@
 				<plugin>
 					<groupId>com.lazerycode.selenium</groupId>
 					<artifactId>driver-binary-downloader-maven-plugin</artifactId>
-					<version>1.0.12</version>
+					<version>1.0.17</version>
 					<configuration>
 						<rootStandaloneServerDirectory>${selenium.standalone.binaries}</rootStandaloneServerDirectory>
 						<downloadedZipFileDirectory>${selenium.standalone.zips}</downloadedZipFileDirectory>
