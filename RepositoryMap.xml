@@ -2,33 +2,32 @@
 <!-- Hash for zip; openssl sha1 <file> -->
 <root>
 	<windows>
-		<driver id="internetexplorer">
-			<version id="3.4.0">
-				<bitrate sixtyfourbit="true">
-					<filelocation>http://selenium-release.storage.googleapis.com/3.4/IEDriverServer_x64_3.4.0.zip
-					</filelocation>
-					<hash>3e79d5cf2acdd91d0ddab9f2044ce51057ff77fe</hash>
-					<hashtype>sha1</hashtype>
-				</bitrate>
-				<bitrate thirtytwobit="true">
-					<filelocation>http://selenium-release.storage.googleapis.com/3.4/IEDriverServer_Win32_3.4.0.zip
-					</filelocation>
-					<hash>8657fb63344f6e26198b860bc089a7a651e43441</hash>
-					<hashtype>sha1</hashtype>
-				</bitrate>
-			</version>
-		</driver>
+		 <driver id="internetexplorer">
+            <version id="3.9.0">
+                <bitrate sixtyfourbit="true">
+                    <filelocation>http://selenium-release.storage.googleapis.com/3.9/IEDriverServer_x64_3.9.0.zip</filelocation>
+                    <hash>c9f885b6a339f3f0039d670a23f998868f539e65</hash>
+                    <hashtype>sha1</hashtype>
+                </bitrate>
+                <bitrate thirtytwobit="true">
+                    <filelocation>http://selenium-release.storage.googleapis.com/3.9/IEDriverServer_Win32_3.9.0.zip</filelocation>
+                    <hash>dab42d7419599dd311d4fba424398fba2f20e883</hash>
+                    <hashtype>sha1</hashtype>
+                </bitrate>
+            </version>
+        </driver>
 
 		<driver id="googlechrome">
-			<version id="2.37">
+			<version id="2.41">
 				<bitrate thirtytwobit="true" sixtyfourbit="true">
-					<filelocation>https://chromedriver.storage.googleapis.com/2.37/chromedriver_win32.zip
+					<filelocation>https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip
 					</filelocation>
-					<hash>fe708aac4eeb919a4ce26cf4aa52a2dacc666a2f</hash>
+					<hash>9d806806dffef0b2ac5003052bd54d304fbe8bd1</hash>
 					<hashtype>sha1</hashtype>
 				</bitrate>
 			</version>
 		</driver>
+		
 		<driver id="marionette">
 			<version id="0.20.0">
 				<bitrate sixtyfourbit="true">
