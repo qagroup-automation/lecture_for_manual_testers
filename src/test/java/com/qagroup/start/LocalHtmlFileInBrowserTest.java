@@ -30,16 +30,16 @@ public class LocalHtmlFileInBrowserTest {
 	
 	@Test
 	public void testStartBrowser() {
-		System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
+		//System.setProperty(CHROME_DRIVER_PATH_VARIABLE, PATH_TO_CHROME_DRIVER);
 		driver = new ChromeDriver();
-		//waitFor(2);
+		waitFor(2);
 
 		driver.navigate().to(PATH_TO_EXAMPLE_HTML);
 
 		waitFor(2);
 
-		driver.findElement(By.cssSelector("button")).click();
-		//waitFor(2);
+		driver.findElement(By.id("cool_button")).click();
+		waitFor(2);
 
 		alert = driver.switchTo().alert();
 		

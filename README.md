@@ -4,13 +4,7 @@ Prerequisites:
 Java 8 (jdk1.8) and Maven have to be installed on your system.
 
 
-To download drivers, run
-
-`
-mvn driver-binary-downloader:selenium
-`
-
-It will download webdrivers into `selenium_standalone_binaries` folder within your project.
+Download a web driver and place it somewhere on you local machine or within this project. Im my case, for chromedriver.exe on Windows, the location is './selenium_standalone_binaries/windows/googlechrome/64bit/chromedriver.exe'
 
 The test class is `LocalHtmlFileInBrowserTest` and placed in `/src/test/java/com/qagroup/start` folder.
 

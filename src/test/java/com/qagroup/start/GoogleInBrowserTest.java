@@ -2,6 +2,7 @@ package com.qagroup.start;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -27,7 +28,7 @@ public class GoogleInBrowserTest {
 		waitFor(2);
 		driver.navigate().to("http://www.google.com.ua");
 		
-		driver.findElement(By.cssSelector("#lst-ib")).sendKeys("QA Group!");
+		driver.findElement(By.xpath("//*[@name='q']")).sendKeys("QA Group!");
 		//By.xpath("//*[@id='lst-ib']")
 		
 		waitFor(2);
